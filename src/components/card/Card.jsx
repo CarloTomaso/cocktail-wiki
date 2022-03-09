@@ -4,14 +4,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 
-export default function MyCard({img,name}) {
-
-    console.log(img);
+export default function MyCard({img,name,id}) {
+  const navigate = useNavigate();
+    console.log(id);
 
 
   return (
-    <Card  sx={{ maxWidth: 345, m: 1}}>
+    <Card 
+    onClick={() => {
+      navigate('/drink/' + id)
+  }}
+    sx={{ maxWidth: 345, m: 1}}>
       <CardActionArea>
         <CardMedia
           component="img"

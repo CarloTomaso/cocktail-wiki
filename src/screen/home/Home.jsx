@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Card from '../card/Card'
+import Card from '../../components/card/Card'
 import './Home.scss'
 import {TextField} from '@mui/material'
 
@@ -41,9 +41,8 @@ console.log(listadrink);
                     key= {item.idDrink}
                     img={item.strDrinkThumb}
                     name={item.strDrink}
-                    nascosto={item.idDrink.toLowerCase().
-                        indexOf(filtro.toLowerCase()) === 
-                        -1}
+                    id={item.idDrink}
+                    
                 />
             ))
         }
