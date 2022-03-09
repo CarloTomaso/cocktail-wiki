@@ -1,34 +1,53 @@
-import { Card } from '@mui/material';
 import React, { useEffect, useState } from 'react'
+import Card from '../card/Card'
+import './Home.scss'
+import {TextField} from '@mui/material'
 
 function Home() {
-
-    const [ listadrink, setlistadrink ] = useState ([])
+    const [filtro, setFiltro] = useState("");
+    const [ listadrink, setlistadrink ] = useState ([]);
 
     const fetchDrink =() => {
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+        fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+ filtro)
             .then(response => {
                 return response.json();
             }).then(data => {
-                console.log(data);
-                setlistadrink([...listadrink, data])})
+                
+                setlistadrink(data.drinks)})
 
-};
+        };
 
 useEffect(() => {
     fetchDrink();
-},[])
+},[filtro])
+
+console.log(listadrink);
+
   return (
-    <>
     
+    <div className="container">
+          <TextField
+          label="Cerca"
+          variant="standard"
+          fullWidth={true}
+          value={filtro}
+          margin="normal"
+          onChange={(ev) => {
+              setFiltro(ev.target.value);
+          }} />
         {
             listadrink.map((item) => (
-                <Card
-                    key= {item.drinks.strDrink}
+                <Card 
+                    key= {item.idDrink}
+                    img={item.strDrinkThumb}
+                    name={item.strDrink}
+                    nascosto={item.idDrink.toLowerCase().
+                        indexOf(filtro.toLowerCase()) === 
+                        -1}
                 />
             ))
         }
-    </>
+   </div>
   )
 }
 
