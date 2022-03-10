@@ -8,11 +8,13 @@ export default function Navbar() {
   
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1 }}
+    
+    >
+      <AppBar position="static" style={{backgroundColor:'transparent', color:'#8b8b8b'}}>
         <Toolbar>
         
-          <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
+          <Typography style={{fontSize:'2em'}} variant="h3" component="div" sx={{ flexGrow: 1 }}>
             Cocktail Wiki By Carlo and Marco
           </Typography>
 {/*           <Button color="inherit">Login</Button>
