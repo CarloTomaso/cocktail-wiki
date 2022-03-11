@@ -27,6 +27,7 @@ console.log(listadrink);
     
     <div className="container">
           <TextField
+          color='success'
           label="Cerca"
           variant="standard"
           fullWidth={true}
@@ -42,6 +43,7 @@ console.log(listadrink);
                     img={item.strDrinkThumb}
                     name={item.strDrink}
                     id={item.idDrink}
+                    description={item.strInstructionsIT}
                     
                 />
             ))

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 function Drink() {
     const params = useParams();
   return (
-    <div>Drink{params.id}</div>
+    <div>Drink  {params.id}</div>
   )
 }
 
