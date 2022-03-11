@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 
 import Grid from '@mui/material/Grid';
 
+import './Detail.scss'
+
 
 export default function Detail(props) {
 
@@ -36,12 +38,13 @@ export default function Detail(props) {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={6}>
-          <img src={props.strDrinkThumb} style={{width:'800px', borderRadius:'15px'}}/>
+          <img src={props.strDrinkThumb} style={{width:'80%', borderRadius:'15px'}}/>
         </Grid>
         <Grid item xs={6} >
           <h1>{props.strDrink}</h1>
+          <h3 style={{margin: '0'}}>Ingredients:</h3>
           <div className="container" style={{display: "flex", justifyContent: 'center', }}>
-
+          
           <div style={{display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
             {ing}
           </div>

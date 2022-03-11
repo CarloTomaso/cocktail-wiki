@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Detail from '../../components/detail/Detail';
 
 
+
 function Drink() {
     const params = useParams();
     const [drinkid, setdrinkid] = useState([]);

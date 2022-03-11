@@ -3,6 +3,8 @@ import Card from '../../components/card/Card'
 import './Home.scss'
 import {TextField} from '@mui/material'
 
+import { useNavigate } from "react-router-dom";
+
 function Home() {
     const [filtro, setFiltro] = useState("");
     const [ listadrink, setlistadrink ] = useState ([]);
@@ -12,12 +14,13 @@ function Home() {
             .then(response => {
                 return response.json();
             }).then(data => {
-                
+                // if (!data.drinks || data.drinks.length === 0) {
+                //     navigate('*')
+                //     return
+                // }
                 setlistadrink(data.drinks)})
 
         };
-
-
 
 
 useEffect(() => {
@@ -25,7 +28,8 @@ useEffect(() => {
 },[filtro])
 
 console.log(listadrink);
-
+const navigate = useNavigate();
+const notFound = <h1>not found</h1>
   return (
     
     <div className="container">
@@ -40,7 +44,7 @@ console.log(listadrink);
               setFiltro(ev.target.value);
           }} />
         {
-            listadrink.map((item) => (
+         listadrink?   listadrink.map((item) => (
                 <Card 
                     key= {item.idDrink}
                     img={item.strDrinkThumb}
@@ -49,7 +53,7 @@ console.log(listadrink);
                     description={item.strAlcoholic}
                     
                 />
-            ))
+            )):  notFound
         }
    </div>
   )

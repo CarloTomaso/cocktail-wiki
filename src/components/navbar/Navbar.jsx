@@ -21,6 +21,7 @@ export default function Navbar() {
           </Typography>
 {           <Button color="inherit" onClick={() => {
             navigate('/')
+               
             }}
             >Home</Button>
          /* <Button color="inherit">Login</Button>

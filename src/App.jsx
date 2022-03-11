@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './screen/home/Home';
 import Drink from './screen/drink/Drink';
+import NotFound from "./screen/notfound/NotFound.jsx";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/drink/:id" element={<Drink />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
 
