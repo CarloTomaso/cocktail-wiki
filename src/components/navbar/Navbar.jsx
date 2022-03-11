@@ -15,8 +15,8 @@ export default function Navbar() {
           <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
             Cocktail Wiki By Carlo and Marco
           </Typography>
-{/*           <Button color="inherit">Login</Button>
-          <Button color="inherit">Login</Button>
+{           <Button color="inherit">Home</Button>
+         /* <Button color="inherit">Login</Button>
           <Button color="inherit">Login</Button> */}
        
         </Toolbar>
