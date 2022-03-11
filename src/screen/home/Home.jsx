@@ -17,6 +17,9 @@ function Home() {
 
         };
 
+
+
+
 useEffect(() => {
     fetchDrink();
 },[filtro])
@@ -43,7 +46,7 @@ console.log(listadrink);
                     img={item.strDrinkThumb}
                     name={item.strDrink}
                     id={item.idDrink}
-                    description={item.strInstructionsIT}
+                    description={item.strAlcoholic}
                     
                 />
             ))

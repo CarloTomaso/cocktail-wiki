@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { useNavigate } from "react-router-dom";
+import Chip from '@mui/material/Chip';
 
 export default function MyCard({img,name,id,description}) {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export default function MyCard({img,name,id,description}) {
 
   return (
     <Card 
-    style={{ border: "none", boxShadow: "none" }}
+    elevation={0}
     onClick={() => {
       navigate('/drink/' + id)
   }}
@@ -32,9 +33,7 @@ export default function MyCard({img,name,id,description}) {
           <Typography gutterBottom variant="h5" component="div">
            {name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description}
-          </Typography>
+          {description=== "Alcoholic"? <Chip label={description} /> : <Chip label={description} variant="outlined" />}
         </CardContent>
       </CardActionArea>
     </Card>
